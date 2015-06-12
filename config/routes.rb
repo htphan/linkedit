@@ -13,19 +13,19 @@ Rails.application.routes.draw do
   get 'links', to: 'links#index'                   # Links index/homepage
   get 'links/new', to: 'links#new'                 # New link form
   post 'links', to: 'links#create'                 # Create link form action
-  get 'link/:id', to: 'links#direct'               # Redirect link to supplied url
-  delete 'link/:id', to: 'links#destory'           # Deletes link and its comments
+  get 'link/:id', to: 'links#redirect'             # Redirect link to supplied url
+  delete 'link/:id', to: 'links#destory'           # Destroys link and its comments
   get 'link/:id/edit', to: 'links#edit'            # Link edit form
   patch 'link/:id', to: 'links#update'             # Update link form action
 
   # Comments
   get 'link/:id/comments', to: 'comments#show'                       # Link, comments, comment form
   post 'link/:id/comments', to: 'comments#create'                    # Create comment form action
-  delete 'link/:link_id/comment/:comment_id', to: 'comments#destroy' # Delete comment
+  delete 'link/:link_id/comment/:comment_id', to: 'comments#destroy' # Destroys comment
   get 'link/:link_id/comment/:comment_id/edit', to 'comments#edit'	 # Comment edit form	
   patch 'link/:link_id/comment/:comment_id', to: 'comments#update'   # Update comment form action
 
-  # SubLinkedit  
+  # Sublinkedit  
   get 'l/new', to: 'sublinkedit#new'      # New sublinkedit form
   get 'l', to: 'sublinkedit#index'  			# Index of all sublinkedits
   post 'l', to: 'sublinkedit#create'      # Creates a new sublinkedit
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   # Sessions
   get 'users/login', to: 'sessions#login'       # Login page
   post 'users/session', to: 'sessions#create'   # Sets session ID
-  delete 'users/session', to: 'session#destory' # Removes session ID
+  delete 'users/session', to: 'session#destory' # Destroys session ID
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
