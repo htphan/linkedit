@@ -3,25 +3,33 @@ Rails.application.routes.draw do
   root to: 'links#index'
   
   # User
-  get 'users/new', to: 'users#new'    # Signup form
-  post 'users', to: 'users#create'    # Create method linked from signup form
+  get 'users/new', to: 'users#new'            # Signup form
+  post 'users', to: 'users#create'            # Create method linked from signup form
+  get 'user/:name', to: 'users#show'          # Shows user profile
+  get 'user/:name/edit', to: 'users#edit'     # User edit form
+  patch 'user/:name', to: 'users#update'      # Update user form action
 
   # Link
-  get 'links/new', to: 'links#new'        # New link form
-  post 'links/', to: 'links#create'       # Create link form action
-  get 'link/:id', to: 'links#direct'      # Redirect link to supplied url
-  get 'links', to: 'links#index'          # Links index/homepage
-  delete 'link/:id', to: 'links#destory'  # Deletes link and its comments
+  get 'links', to: 'links#index'                   # Links index/homepage
+  get 'links/new', to: 'links#new'                 # New link form
+  post 'links', to: 'links#create'                 # Create link form action
+  get 'link/:id', to: 'links#direct'               # Redirect link to supplied url
+  delete 'link/:id', to: 'links#destory'           # Deletes link and its comments
+  get 'link/:id/edit', to: 'links#edit'            # Link edit form
+  patch 'link/:id', to: 'links#update'             # Update link form action
 
   # Comments
-  get 'link/:id/comments', to: 'comments#show'    # Link, comments, comment form
-  post 'link/:id/comments', to: 'comments#create' # Create comment form action
+  get 'link/:id/comments', to: 'comments#show'                       # Link, comments, comment form
+  post 'link/:id/comments', to: 'comments#create'                    # Create comment form action
   delete 'link/:link_id/comment/:comment_id', to: 'comments#destroy' # Delete comment
+  get 'link/:link_id/comment/:comment_id/edit', to 'comments#edit'	 # Comment edit form	
+  patch 'link/:link_id/comment/:comment_id', to: 'comments#update'   # Update comment form action
 
   # SubLinkedit  
   get 'l/new', to: 'sublinkedit#new'      # New sublinkedit form
+  get 'l', to: 'sublinkedit#index'  			# Index of all sublinkedits
   post 'l', to: 'sublinkedit#create'      # Creates a new sublinkedit
-  get 'l/:name', to: 'sublinkedit#index'  # SubLinkedit links index
+  get 'l/:name', to: 'sublinkedit#show'		# Specific sublinkedit links index										
 
   # Sessions
   get 'users/login', to: 'sessions#login'       # Login page
