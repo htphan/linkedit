@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   get 'l/new', to: 'sublinkedit#new'      # New sublinkedit form
   get 'l', to: 'sublinkedit#index'  			# Index of all sublinkedits
   post 'l', to: 'sublinkedit#create'      # Creates a new sublinkedit
-  get 'l/:name', to: 'sublinkedit#show'		# Specific sublinkedit links index										
+  get 'l/:title', to: 'sublinkedit#show', as: 'l_show'		# Specific sublinkedit links index										
 
   # Sessions
   get 'users/login', to: 'sessions#login'       # Login page
