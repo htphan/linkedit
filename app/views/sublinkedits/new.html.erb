@@ -1,0 +1,10 @@
+<%= form_tag(l_path, method: :post) do %>
+
+  <div class="input">
+    <%= label_tag(:title, "Name") %>
+    <%= text_field_tag(:title, nil, size: 40) %>
+  </div>
+
+  <%= submit_tag("Create") %>
+
+<% end %>

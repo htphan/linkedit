@@ -1,0 +1,10 @@
+<h1 class="sub-index">Sublinkedits</h1>
+
+<div class="sublinkedits">
+  <% @sublinkedits.each do |sub| %>
+    <div class="sublinkedit">
+      <%= link_to sub.title, l_show_path(sub) %>
+    </div>
+
+</div>
+  
