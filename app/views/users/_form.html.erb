@@ -1,0 +1,44 @@
+<%= form_tag(@user, method: @action) do %>
+
+<div class="input">
+    <div>
+      <%= label_tag(:username, 'Name') %>
+      <%= text_field_tag(:username, nil, size: 50) %>
+    </div>
+
+       </br>
+
+    <div>
+      <%= label_tag(:email, 'Email: ') %>
+      <%= text_field_tag(:email, nil, size: 50) %>
+    </div>
+
+      </br>
+
+    <div>
+      <%= label_tag(:email, 'Confirm Email: ') %>
+      <%= text_field_tag(:email, nil, size: 50) %>
+    </div>
+
+      </br>
+
+    <div>
+      <%= label_tag(:password, 'Password: ') %>
+      <%= password_field_tag(:password, nil, size: 50) %>
+    </div>
+
+      </br>
+
+    <div>
+      <%= label_tag(:password, 'Confirm Password: ') %>
+      <%= password_field_tag(:password, nil, size: 50) %>
+    </div>
+
+      </br>
+
+    <div>
+      <%= submit_tag(@button) %>
+    </div>
+  </div>
+
+  <% end %>
