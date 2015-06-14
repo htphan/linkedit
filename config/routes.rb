@@ -26,10 +26,10 @@ Rails.application.routes.draw do
   patch 'link/:link_id/comment/:comment_id', to: 'comments#update', as: 'comment_update'   # Update comment form action
 
   # Sublinkedit  
-  get 'l/new', to: 'sublinkedit#new'      # New sublinkedit form
-  get 'l', to: 'sublinkedit#index'  			# Index of all sublinkedits
-  post 'l', to: 'sublinkedit#create'      # Creates a new sublinkedit
-  get 'l/:title', to: 'sublinkedit#show', as: 'l_show'		# Specific sublinkedit links index										
+  get 'l/new', to: 'sublinkedits#new'      # New sublinkedit form
+  get 'l', to: 'sublinkedits#index'  			# Index of all sublinkedits
+  post 'l', to: 'sublinkedits#create'      # Creates a new sublinkedit
+  get 'l/:title', to: 'sublinkedits#show', as: 'l_show'		# Specific sublinkedit links index										
 
   # Sessions
   get 'users/login', to: 'sessions#login'       # Login page
