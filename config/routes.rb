@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   patch 'user/:name', to: 'users#update'      # Update user form action
 
   # Link
-  get 'links', to: 'links#index'                   # Links index/homepage
-  get 'links/new', to: 'links#new'                 # New link form
-  post 'links', to: 'links#create'                 # Create link form action
-  get 'link/:id', to: 'links#redirect'             # Redirect link to supplied url
-  delete 'link/:id', to: 'links#destory'           # Destroys link and its comments
-  get 'link/:id/edit', to: 'links#edit'            # Link edit form
-  patch 'link/:id', to: 'links#update'             # Update link form action
+  get 'links', to: 'links#index'                                     # Links index/homepage
+  get 'links/new', to: 'links#new'                                   # New link form
+  post 'links', to: 'links#create'                                   # Create link form action
+  get 'link/:id', to: 'links#redirect', as: 'links_redirect'         # Redirect link to supplied url
+  delete 'link/:id', to: 'links#destory', as: 'links_detroy'         # Destroys link and its comments
+  get 'link/:id/edit', to: 'links#edit', as: 'links_edit'            # Link edit form
+  patch 'link/:id', to: 'links#update', as: 'links_update'           # Update link form action
 
   # Comments
   get 'link/:id/comments', to: 'comments#show'                       # Link, comments, comment form
