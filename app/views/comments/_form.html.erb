@@ -1,0 +1,12 @@
+<%= form_tag(@path, method: @verb) do %>
+
+  <div class="input">
+    <%= label_tag(:content, 'Comment: ') %>
+    <%= text_field_tag(:content, @comment.content, size: 40) %>
+  </div>
+  
+  <br>
+
+  <%= submit_tag("Save") %>
+
+<% end %>

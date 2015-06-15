@@ -1,0 +1,12 @@
+<div class='link'>
+  <div class="link_title"> 
+    <%= link_to "Test", link.url %>
+    <!-- <a href=<%= "#{link.url}" %>><%= "#{link.title}" %></a> -->
+  </div>
+  <div class="sumbit_time">
+    <p class="submitted">submitted <%= "#{time_ago_in_words(link.created_at)}" %> ago </p>
+  </div>
+  <div class="link_comments">
+    <%= link_to "#{link.comments.count} comments", comment_show_path(link) %>
+  </div>
+</div>
