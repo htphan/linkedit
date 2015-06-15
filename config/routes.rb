@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: 'links#index'
   
   # User
-  get 'users/new', to: 'users#new'            # Signup form
-  post 'users', to: 'users#create'            # Create method linked from signup form
-  get 'user/:name', to: 'users#show'          # Shows user profile
-  get 'user/:name/edit', to: 'users#edit'     # User edit form
-  patch 'user/:name', to: 'users#update'      # Update user form action
+  get 'users/new', to: 'users#new'                           # Signup form
+  post 'users', to: 'users#create'                           # Create method linked from signup form
+  get 'user/:name', to: 'users#show'                         # Shows user profile
+  get 'user/:name/edit', to: 'users#edit', as: 'users_edit'  # User edit form
+  patch 'user/:name', to: 'users#update', as: 'users_update' # Update user form action
 
   # Link
   get 'links', to: 'links#index'                   # Links index/homepage
