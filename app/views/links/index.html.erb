@@ -1,0 +1,10 @@
+<h2>Links Index</h2>
+
+<div class='links'>
+  <% @links.each do |link| %>
+    <%= render partial: 'comments/link', object: link %>
+
+    <br>
+
+  <% end %>
+</div>

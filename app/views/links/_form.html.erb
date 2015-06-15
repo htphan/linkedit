@@ -1,0 +1,22 @@
+<%= form_tag(@link, method: @action) do %>
+
+<div class="input">
+  <div>
+    <%= label_tag(:title, 'Title: ') %>
+    <%= text_field_tag(:title, nil, size: 50) %>
+  </div>
+
+    </br>
+
+  <div>
+    <%=label_tag(:url, 'URL: ') %>
+    <%=text_field_tag(:url, nil, size: 50) %>
+  </div>
+
+    </br>
+
+  <div>
+    <%= submit_tag(@button) %>
+  </div>
+</div>
+<% end %>
