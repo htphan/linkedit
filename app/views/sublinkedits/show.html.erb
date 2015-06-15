@@ -1,0 +1,8 @@
+<h1 class="sub-show"><%= @sublinkedit.title %></h1>
+
+<div class="links">
+  <% @links.order(created_at: :desc).each do |link| %>
+    <%= render partial: 'comments/link', object: link %>
+    <br>
+  <% end %>
+</div>
