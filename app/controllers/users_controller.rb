@@ -26,9 +26,10 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by(name: params[:name])
+    passhash = Digest::SHA1.hexdigest(params[:password])
     @user.update(name: params[:username], 
                  email: params[:email], 
-                 password: params[:password])
+                 password: passhash)
 
     redirect_to :root
   end
