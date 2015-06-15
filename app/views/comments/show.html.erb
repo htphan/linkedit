@@ -1,0 +1,8 @@
+<h1>Links Index</h1>
+
+<div class='links'>
+  <% @links.each do |link| %>
+    <%= render partial: 'link', object: link %>
+    <br>
+  <% end %>
+</div>

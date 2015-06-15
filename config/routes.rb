@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   patch 'link/:id', to: 'links#update', as: 'links_update'           # Update link form action
 
   # Comments
+
   get 'link/:id/comments', to: 'comments#show', as: 'comment_show'                         # Link, comments, comment form
   post 'link/:id/comments', to: 'comments#create'                                          # Create comment form action
   delete 'link/:link_id/comment/:comment_id', to: 'comments#destroy'                       # Destroys comment
